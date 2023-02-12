@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel"
+      rel="stylesheet"
+    />
+    <style>
+        html{scroll-behavior:smooth}
+
+      .heart1 {
+        position: relative;
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: #e74c3c;
+        border-radius: 0 0 0 10px;
+        transform: rotate(-45deg);
+        animation: pulse 1s infinite;
+        margin: auto;
+        margin-top: 67px;
+        margin-bottom: 50px;
+      }
+      .heart1::before,
+      .heart1::after {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: #e74c3c;
+        border-radius: 50%;
+      }
+      .heart1::before {
+        top: -50px;
+        left: 0;
+      }
+      .heart1::after {
+        top: 0;
+        right: -50px;
+      }
+      @keyframes pulse {
+        0%,
+        20% {
+          transform: rotate(-45deg) scale(1);
+        }
+        30% {
+          transform: rotate(-45deg) scale(1.2);
+        }
+        50% {
+          transform: rotate(-45deg) scale(1);
+        }
+        60% {
+          transform: rotate(-45deg) scale(1.1);
+        }
+        70%,
+        100% {
+          transform: rotate(-45deg) scale(1);
+        }
+      }
+      html,
+      body {
+        height: 100%;
+      }
+
+      .wrapper {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        min-height: 100%;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .x1 {
+        left: 5%;
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        transform: scale(0.9);
+        opacity: 0.6;
+        -webkit-animation: moveclouds 15s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 15s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+      }
+
+      .x2 {
+        left: 25%;
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        transform: scale(0.6);
+        opacity: 0.9;
+        -webkit-animation: moveclouds 25s linear infinite,
+          sideWays 5s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 25s linear infinite,
+          sideWays 5s ease-in-out infinite alternate;
+      }
+      .x3 {
+        left: 55%;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.8;
+        -webkit-animation: moveclouds 20s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 20s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+      }
+      .x4 {
+        left: 72%;
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        transform: scale(0.75);
+        opacity: 0.9;
+        -webkit-animation: moveclouds 18s linear infinite,
+          sideWays 2s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 18s linear infinite,
+          sideWays 0zs ease-in-out infinite alternate;
+      }
+      .x5 {
+        left: 88%;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.3;
+        -webkit-animation: moveclouds 7s linear infinite,
+          sideWays 1s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 7s linear infinite,
+          sideWays 1s ease-in-out infinite alternate;
+      }
+      .x6 {
+        left: 33%;
+        opacity: 1;
+        -webkit-animation: moveclouds 2s linear infinite,
+          swayWays 1s ease-in-out infinite alternate;
+        animation: moveclouds 10s linear infinite,
+          swayWays 9s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes moveclouds {
+        0% {
+          top: 500px;
+        }
+        100% {
+          top: -500px;
+        }
+      }
+
+      @keyframes moveclouds {
+        0% {
+          top: 500px;
+        }
+        100% {
+          top: -500px;
+        }
+      }
+
+      @-webkit-keyframes sideWays {
+        0% {
+          margin-left: 0px;
+        }
+        100% {
+          margin-left: 50px;
+        }
+      }
+
+      @keyframes sideWays {
+        0% {
+          margin-left: 0px;
+        }
+        100% {
+          margin-left: 50px;
+        }
+      }
+
+      @-keyframes swayWays {
+        0% {
+          transform: rotate(12deg);
+          left: -0.3%;
+        }
+        33% {
+          transform: rotate(-2deg);
+          left: 0.7%;
+        }
+        100% {
+          transform: rotate(0deg);
+          left: -12%;
+        }
+      }
+
+      /* //  HEART CODE */
+      .altheart {
+        background: url(http://static.indigoimages.ca/2016/shop/113439_img25_twotoneheart.png)
+          no-repeat center;
+        width: 24px;
+        height: 21px;
+        position: relative;
+        display: block;
+      }
+
+      .heart {
+        position: relative;
+      }
+      .heart:before,
+      .heart:after {
+        position: absolute;
+        content: "";
+        left: 18px;
+        top: 0;
+        width: 18px;
+        height: 30px;
+        background: #cc2022;
+        -moz-border-radius: 20px 50% 0 0;
+        border-radius: 30px 30px 0 0;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+      }
+      .heart:after {
+        left: 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+      }
+      *,
+      *:after,
+      *:before {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body style="background-color: #ffcaaf; font-family: 'Abel'; font-size: 22px">
+    <div style="height: 100%">
+      <div
+        style="
+          font-weight: bold;
+          display: block;
+          margin: auto;
+          width: fit-content;
+          margin-bottom: 40px;
+          margin-top: 20px;
+        "
+      >
+        Anniversary 4 tháng cùng em bé iu
+      </div>
+      
+      <img
+        src="anhyeucuaem.jpg"
+        width="40%"
+        style="display: block; margin: auto; border-radius: 4px"
+      />
+      <div class="heart1 pulse"></div>
+      <img
+        src="belien.jpg"
+        width="40%"
+        style="display: block; margin: auto; border-radius: 4px"
+      />
+      <a href="#wrapper"
+      style="display: block;margin: auto;width: fit-content; margin-top: 40px;"
+      ><button style="padding: 2px 20px 2px 20px; font-weight: bold; background-color: #c44548;font-family: 'Abel'; font-size: larger;">POP</button></a>
+    </div>
+
+    <div id="wrapper" class="wrapper">
+      <br /><br /><br />
+      <div
+        style="
+          background-color: white;
+          display: block;
+          margin: auto;
+          width: 50%;
+          padding: 10px;
+        "
+      >
+        <img
+          src="slide1.jpg"
+          width="100%"
+          style="
+            display: block;
+            margin: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+          "
+        />
+        <img
+          src="slide2.jpg"
+          width="100%"
+          style="
+            display: block;
+            margin: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+          "
+        />
+        <img
+          src="slide3.jpg"
+          width="100%"
+          style="
+            display: block;
+            margin: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+          "
+        />
+        <img
+          src="slide4.jpg"
+          width="100%"
+          style="display: block; margin: auto; border-radius: 4px"
+        />
+      </div>
+      <div style="position: absolute; top: 400px; left: 100px;">
+        <div class="heart x1"></div>
+        <div class="heart x2"></div>
+        <div class="heart x3"></div>
+        <div class="heart x4"></div>
+        <div class="heart x5"></div>
+        <div class="altheart x6"></div>
+      </div>
+    </div>
+    <script>
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    </script>
+  </body>
+</html>
