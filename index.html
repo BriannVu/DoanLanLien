@@ -10,7 +10,9 @@
       rel="stylesheet"
     />
     <style>
-        html{scroll-behavior:smooth}
+      html {
+        scroll-behavior: smooth;
+      }
 
       .heart1 {
         position: relative;
@@ -192,54 +194,52 @@
         }
       }
 
-      /* //  HEART CODE */
-      .altheart {
-        background: url(http://static.indigoimages.ca/2016/shop/113439_img25_twotoneheart.png)
-          no-repeat center;
-        width: 24px;
-        height: 21px;
-        position: relative;
-        display: block;
+      .float {
+        border: solid 3px #fff;
+        border-radius: 15px;
+        animation: up-down 0.8s infinite ease-in-out alternate;
       }
-
-      .heart {
-        position: relative;
-      }
-      .heart:before,
-      .heart:after {
-        position: absolute;
-        content: "";
-        left: 18px;
-        top: 0;
-        width: 18px;
-        height: 30px;
-        background: #cc2022;
-        -moz-border-radius: 20px 50% 0 0;
-        border-radius: 30px 30px 0 0;
-        -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        -webkit-transform-origin: 0 100%;
-        -ms-transform-origin: 0 100%;
-        transform-origin: 0 100%;
-      }
-      .heart:after {
-        left: 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transform-origin: 100% 100%;
-        -ms-transform-origin: 100% 100%;
-        transform-origin: 100% 100%;
-      }
-      *,
-      *:after,
-      *:before {
-        box-sizing: border-box;
+      @keyframes up-down {
+        from {
+          transform: translatey(0px);
+        }
+        to {
+          transform: translatey(-4px);
+        }
       }
     </style>
   </head>
-  <body style="background-color: #ffcaaf; font-family: 'Abel'; font-size: 22px">
+  <body
+    style="
+      background-color: #ffcaaf;
+      font-family: 'Abel';
+      font-size: 22px;
+      height: 98%;
+    "
+  >
+    <svg
+      id="hearts"
+      viewBox="-600 -400 1200 800"
+      preserveAspectRatio="xMidYMid slice"
+      style="
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      "
+    >
+      <defs>
+        <symbol id="heart" viewBox="-69 -16 138 138">
+          <path
+            d="M0,12
+                 C 50,-30 110,50  0,120
+                 C-110,50 -50,-30 0,12z"
+          />
+        </symbol>
+      </defs>
+    </svg>
     <div style="height: 100%">
       <div
         style="
@@ -247,30 +247,82 @@
           display: block;
           margin: auto;
           width: fit-content;
-          margin-bottom: 40px;
-          margin-top: 20px;
+          height: 8%;
+          padding-top: 1%;
         "
       >
-        Anniversary 4 tháng cùng em bé iu
+        <div
+          style="
+            background-color: white;
+            padding: 3px 6px 3px 6px;
+            border-radius: 2px;
+          "
+        >
+          Anniversary 4 tháng cùng em bé iu
+        </div>
       </div>
-      
-      <img
-        src="nam.jpg"
-        width="40%"
-        style="display: block; margin: auto; border-radius: 4px"
-      />
-      <div class="heart1 pulse"></div>
-      <img
-        src="lien.jpg"
-        width="40%"
-        style="display: block; margin: auto; border-radius: 4px"
-      />
-      <a href="#wrapper"
-      style="display: block;margin: auto;width: fit-content; margin-top: 40px;"
-      ><button style="padding: 2px 20px 2px 20px; font-weight: bold; background-color: #c44548;font-family: 'Abel'; font-size: larger;">POP</button></a>
+      <div style="height: 90%">
+        <img
+          class="float"
+          src="nam.jpg"
+          height="36%"
+          style="display: block; margin: auto; border-radius: 4px"
+        />
+        <div style="height: 15%"></div>
+        <img
+          class="float"
+          src="lien.jpg"
+          height="36%"
+          style="display: block; margin: auto; border-radius: 4px"
+        />
+        <div
+          id="startBtn"
+          style="
+            display: block;
+            position: relative;
+            left: 86%;
+            top: 3%;
+            border: 5px white solid;
+            width: 30px;
+            border-radius: 100px;
+            height: 30px;
+            padding: 3px;
+            box-shadow: 0px 0px 20px white;
+          "
+        >
+          <div
+            style="
+              display: block;
+              width: fit-content;
+              margin: auto;
+              color: white;
+            "
+          >
+            &#9658;
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="wrapper" class="wrapper">
+    <!-- Button Click -->
+    <div
+      id="heartFlying"
+      style="
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        z-index: 6;
+        height: 100%;
+        width: 100%;
+      "
+    >
+      <canvas
+        id="pinkboard"
+        style="position: absolute; width: 100%; height: 100%; display: none;"
+      ></canvas>
+    </div>
+
+    <div id="wrapper" class="wrapper" style="display: none">
       <br /><br /><br />
       <div
         style="
@@ -317,17 +369,65 @@
           style="display: block; margin: auto; border-radius: 4px"
         />
       </div>
-      <div style="position: absolute; top: 400px; left: 100px;">
-        <div class="heart x1"></div>
-        <div class="heart x2"></div>
-        <div class="heart x3"></div>
-        <div class="heart x4"></div>
-        <div class="heart x5"></div>
-        <div class="altheart x6"></div>
-      </div>
     </div>
+    <script src="heartFlying.js"></script>
     <script>
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      const colors = [
+        "#e03776",
+        "#8f3e98",
+        "#4687bf",
+        "#3bab6f",
+        "#f9c25e",
+        "#f47274",
+      ];
+      const SVG_NS = "http://www.w3.org/2000/svg";
+      const SVG_XLINK = "http://www.w3.org/1999/xlink";
+
+      let heartsRy = [];
+
+      function useTheHeart(n) {
+        let use = document.createElementNS(SVG_NS, "use");
+        use.n = n;
+        use.setAttributeNS(SVG_XLINK, "xlink:href", "#heart");
+        use.setAttributeNS(null, "transform", `scale(${use.n})`);
+        use.setAttributeNS(null, "fill", colors[n % colors.length]);
+        use.setAttributeNS(null, "x", -69);
+        use.setAttributeNS(null, "y", -69);
+        use.setAttributeNS(null, "width", 138);
+        use.setAttributeNS(null, "height", 138);
+
+        heartsRy.push(use);
+        hearts.appendChild(use);
+      }
+
+      for (let n = 18; n >= 0; n--) {
+        useTheHeart(n);
+      }
+
+      function Frame() {
+        window.requestAnimationFrame(Frame);
+        for (let i = 0; i < heartsRy.length; i++) {
+          if (heartsRy[i].n < 18) {
+            heartsRy[i].n += 0.01;
+          } else {
+            heartsRy[i].n = 0;
+            hearts.appendChild(heartsRy[i]);
+          }
+          heartsRy[i].setAttributeNS(
+            null,
+            "transform",
+            `scale(${heartsRy[i].n})`
+          );
+        }
+      }
+
+      Frame();
+
+      var startBtn = document.getElementById("startBtn");
+      startBtn.style.cursor = "pointer";
+      startBtn.onclick = function () {
+        // document.getElementById("pinkboard").style.display = "";
+      };
     </script>
   </body>
 </html>
